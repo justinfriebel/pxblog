@@ -24,6 +24,9 @@ form.link, form.button {
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
+.header h3 {
+  margin: 0;
+}
 .logo {
   width: 519px;
   height: 71px;

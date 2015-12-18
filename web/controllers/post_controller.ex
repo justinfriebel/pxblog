@@ -2,14 +2,16 @@ defmodule Pxblog.PostController do
   use Pxblog.Web, :controller
 
   alias Pxblog.Post
+  alias Pxblog.User
 
   plug :scrub_params, "post" when action in [:create, :update]
   plug :assign_user
   plug :authorize_user when action in [:new, :create, :update, :edit, :delete]
 
-  def index(conn, _params) do
+  def index(conn, %{"user_id" => user_id}) do
     posts = Repo.all(assoc(conn.assigns[:user], :posts))
-    render(conn, "index.html", posts: posts)
+    user = Repo.get!(User, user_id)
+    render(conn, "index.html", posts: posts, user: user)
   end
 
   def new(conn, _params) do
