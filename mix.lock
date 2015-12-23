@@ -1,4 +1,6 @@
 %{"bbmustache": {:hex, :bbmustache, "1.0.3"},
+  "certifi": {:hex, :certifi, "0.3.0"},
+  "combine": {:hex, :combine, "0.6.0"},
   "comeonin": {:hex, :comeonin, "2.0.0"},
   "conform": {:hex, :conform, "0.17.0"},
   "connection": {:hex, :connection, "1.0.2"},
@@ -13,6 +15,9 @@
   "fs": {:hex, :fs, "0.9.2"},
   "getopt": {:hex, :getopt, "0.8.2"},
   "gettext": {:hex, :gettext, "0.7.0"},
+  "hackney": {:hex, :hackney, "1.4.7"},
+  "idna": {:hex, :idna, "1.0.2"},
+  "mimerl": {:hex, :mimerl, "1.0.2"},
   "neotoma": {:hex, :neotoma, "1.7.3"},
   "phoenix": {:hex, :phoenix, "1.1.0"},
   "phoenix_ecto": {:hex, :phoenix_ecto, "2.0.0"},
@@ -24,4 +29,7 @@
   "postgrex": {:hex, :postgrex, "0.10.0"},
   "providers": {:hex, :providers, "1.4.1"},
   "ranch": {:hex, :ranch, "1.2.0"},
-  "relx": {:hex, :relx, "3.5.0"}}
+  "relx": {:hex, :relx, "3.5.0"},
+  "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5"},
+  "timex": {:hex, :timex, "0.19.5"},
+  "tzdata": {:hex, :tzdata, "0.5.5"}}

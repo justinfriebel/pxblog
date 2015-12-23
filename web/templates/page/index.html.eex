@@ -1,18 +1,19 @@
-<div class="jumbotron">
-  <h1>Welcome</h1>
-  <p class="lead">Click on an author below to see their posts.</p>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-
-    <%= for user <- @users do %>
-      <div><%= user.username %> - <%= user.email %></div>
-      <%= for post <- @posts do %>
-        <div><%= post.title %></div>
-      <%= end %>
-      <br/>
-    <%= end %>
-
+<div id="home-container">
+  <div class="row row-top-bottom-padding">
+    <div class="col-xs-12 col-sm-8 col-centered">
+      <div class="main-message">
+        <h1 id="page-title">I am Justin Friebel, a web developer in Appleton Wisconsin</h1>
+        <p class="">Click on one of my posts below to see what I've been writing about.</p>
+      </div>
+    </div>
   </div>
+  <div class="row row-top-bottom-padding">
+    <div class="col-xs-12">
+      <%= for post <- @user.posts do %>
+        <div class="post-container">
+          <h3><%= link post.title, to: user_post_path(@conn, :show, @user, post), class: "" %></h3>
+        </div>
+      <% end %>
+    </div>
+</div>
 </div>

@@ -9,7 +9,7 @@ defmodule Pxblog.UserController do
   plug :authorize_user when action in [:edit, :update, :delete]
 
   def index(conn, _params) do
-    users = Repo.all(User)
+    users = User |> Repo.all |> Repo.preload [:posts]
     render(conn, "index.html", users: users)
   end
 

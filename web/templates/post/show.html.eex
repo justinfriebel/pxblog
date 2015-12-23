@@ -1,18 +1,9 @@
-<h2>Show post</h2>
+<h1 id="page-title"><%= @post.title %></h1>
 
-<ul>
+<%= markdown(@post.body) %>
 
-  <li>
-    <strong>Title:</strong>
-    <%= @post.title %>
-  </li>
-
-  <li>
-    <strong>Body:</strong>
-    <%= markdown(@post.body) %>
-  </li>
-
-</ul>
-
+<span class="piped-links">
 <%= link "Edit", to: user_post_path(@conn, :edit, @user, @post) %>
 <%= link "Back", to: user_post_path(@conn, :index, @user) %>
+<%= link "Delete", to: user_post_path(@conn, :delete, @user, @post), method: :delete, data: [confirm: "Are you sure?"] %>
+</span>

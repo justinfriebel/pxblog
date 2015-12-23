@@ -1,30 +1,13 @@
-<h1>
-<%= @user.username %>'s posts
-</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for post <- @posts do %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= markdown(post.body) %></td>
-
-      <td class="text-right">
-        <%= link "Show", to: user_post_path(@conn, :show, @user, post), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: user_post_path(@conn, :edit, @user, post), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: user_post_path(@conn, :delete, @user, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<div id="posts-container">
+  <h1 id="page-title"><%= @user.username %>'s posts</h1>
+    <%= for post <- @posts do %>
+      <div class="row row-top-bottom-padding">
+        <div class="col-xs-12">
+          <h2><%= link post.title, to: user_post_path(@conn, :show, @user, post) %></h2>
+          <%= markdown(post.body) %>
+        </div>
+      </div>
+    <% end %>
+</div>
 
 <%= link "New post", to: user_post_path(@conn, :new, @user) %>

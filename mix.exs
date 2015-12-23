@@ -22,7 +22,7 @@ defmodule Pxblog.Mixfile do
 
   defp app_list(:test), do: [:ex_machina | app_list]
   defp app_list(_), do: app_list
-  defp app_list, do: [:phoenix, :phoenix_html, :cowboy, :logger, :phoenix_ecto, :postgrex, :comeonin]
+  defp app_list, do: [:phoenix, :phoenix_html, :cowboy, :logger, :phoenix_ecto, :postgrex, :comeonin, :tzdata]
 
   # Specifies which paths to compile per environment
   defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
@@ -42,6 +42,7 @@ defmodule Pxblog.Mixfile do
      {:exrm, "~> 0.19.9"},
      {:conform, "~> 0.17.0"},
      {:ex_machina, "~> 0.6"},
-     {:earmark, "~> 0.1.19"}]
+     {:earmark, "~> 0.1.19"},
+     {:timex, "~> 0.19.2"}]
   end
 end

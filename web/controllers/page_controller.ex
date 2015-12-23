@@ -5,8 +5,7 @@ defmodule Pxblog.PageController do
   alias Pxblog.User
 
   def index(conn, _params) do
-    users = Repo.all(User)
-    posts = Repo.all(Post)
-    render(conn, "index.html", users: users, posts: posts)
+    user = User |> Repo.get!(2) |> Repo.preload [:posts]
+    render(conn, "index.html", user: user)
   end
 end
