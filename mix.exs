@@ -43,6 +43,8 @@ defmodule Pxblog.Mixfile do
      {:conform, "~> 0.17.0"},
      {:ex_machina, "~> 0.6"},
      {:earmark, "~> 0.1.19"},
-     {:timex, "~> 0.19.2"}]
+     {:timex, "~> 0.19.2"},
+     {:arc, "~> 0.2.2"},
+     {:arc_ecto, "~> 0.3.1"}]
   end
 end

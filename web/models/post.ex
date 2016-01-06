@@ -28,10 +28,13 @@ defmodule Pxblog.Post do
     model
   end
 
-  defp strip_unsafe_body(model, %{"body" => body}) do
-    {:safe, clean_body} = Phoenix.HTML.html_escape(body)
-    model |> put_change(:body, clean_body)
-  end
+  # removed this so links and iframes are welcome,
+  # should look more into how unsafe it is though
+  #
+  # defp strip_unsafe_body(model, %{"body" => body}) do
+  #   {:safe, clean_body} = Phoenix.HTML.html_escape(body)
+  #   model |> put_change(:body, clean_body)
+  # end
 
   defp strip_unsafe_body(model, params) do
     model

@@ -1,4 +1,6 @@
-%{"bbmustache": {:hex, :bbmustache, "1.0.3"},
+%{"arc": {:hex, :arc, "0.2.2"},
+  "arc_ecto": {:hex, :arc_ecto, "0.3.1"},
+  "bbmustache": {:hex, :bbmustache, "1.0.3"},
   "certifi": {:hex, :certifi, "0.3.0"},
   "combine": {:hex, :combine, "0.6.0"},
   "comeonin": {:hex, :comeonin, "2.0.0"},
