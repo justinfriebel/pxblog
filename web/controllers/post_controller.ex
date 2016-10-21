@@ -23,6 +23,10 @@ defmodule Pxblog.PostController do
   end
 
   def create(conn, %{"post" => post_params}) do
+    IO.inspect post_params
+    upload = %Plug.Upload{}
+    image = upload.path <> "/" <> upload.filename
+    File.cp!(image, "/web/static/assets/images/")
     changeset =
       conn.assigns[:user]
       |> build(:posts)
